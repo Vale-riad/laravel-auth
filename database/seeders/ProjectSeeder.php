@@ -17,7 +17,7 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-           // cancello tutti i dati della tabella Posts
+           // cancello tutti i dati della tabella Projects
            Project::truncate();
         for( $i = 0; $i < 10; $i++ ) {
             $new_project = new Project();
