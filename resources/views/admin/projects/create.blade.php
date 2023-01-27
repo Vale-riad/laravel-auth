@@ -14,7 +14,7 @@
   <div class="py-4">
     <h1>Crea Post</h1>
     <div class="mt-4">
-        <form action="{{ route('admin.projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
@@ -23,6 +23,10 @@
             <div class="mb-3">
                 <label for="content" class="form-label">Contenuto</label>
                 <textarea class="form-control" id="content" name="content" rows="10" placeholder="Inserisci il contenuto">{{ old('content') }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="cover_image" class="form-label">Immagine</label>
+                <input type="file" class="form-control" id="title" name="cover_image" placeholder="Inserisci il titolo" value="{{ old('cover_image') }}">
             </div>
             <button type="submit" class="btn btn-primary">Crea</button>
         </form>
